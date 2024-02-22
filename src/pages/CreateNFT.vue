@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="big-card">
-        <h3>Create NFT</h3>
+        <h2>Create NFT</h2>
         <form @submit.prevent="createNFT" class="form">
           <label for="tokenURI">Token URI:</label><br>
           <input type="text" id="tokenURI" v-model="tokenURI"><br>
@@ -14,7 +14,7 @@
     <footer class="footer">
       <p>&copy; 2024 NFT Marketplace</p>
       <div class="social-links">
-        <a href="#" @click.prevent="navigateTo('social-link-1')">About us</a>
+        <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
       </div>
     </footer>
   </template>
@@ -51,7 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
   }
   
   .big-card {
@@ -94,15 +94,12 @@
   }
   
   .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     background: rgb(180, 188, 202);
     background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 98%);
     color: #ddd;
     text-align: center;
     padding: 10px 0;
+    margin: -8px;
   }
   
   .footer .social-links {

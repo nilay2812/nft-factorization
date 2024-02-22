@@ -1,31 +1,28 @@
 <template>
     <div class="container">
-      <div class="content">
-        <div class="card">
-          <h1>Lock NFT</h1>
-          <div class="input-group">
+        <div class="big-card">
+          <h2>Lock NFT</h2>
+          <form class="form">
             <label for="tokenId">NFT Token ID:</label>
-            <input type="text" id="tokenId" v-model="tokenId">
-          </div>
-          <div class="input-group">
+            <input type="number" id="tokenId" v-model="tokenId">
+          
             <label for="tokenURI">Token URI:</label>
             <input type="text" id="tokenURI" v-model="tokenURI">
-          </div>
-          <div class="input-group">
+          
             <label for="sharesAmount">Shares Amount:</label>
             <input type="number" id="sharesAmount" v-model="sharesAmount">
-          </div>
           <button @click="lockNFT">Lock NFT</button>
+          </form>
           <div id="message" v-if="message">{{ message }}</div>
         </div>
-      </div>
+        </div>
       <footer class="footer">
         <p>&copy; 2024 NFT Marketplace</p>
         <div class="social-links">
-          <a href="#" @click.prevent="navigateTo('social-link-1')">About us</a>
+          <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
         </div>
       </footer>
-    </div>
+    
   </template>
   
   <script>
@@ -63,50 +60,50 @@
   <style scoped>
   .container {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  .content {
-    flex-grow: 1;
-    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    height: 85vh;
   }
   
-  .card {
-    background: rgb(180, 188, 202);
+  .big-card {
     background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 98%);
     color: #ddd;
     border-radius: 10px;
     padding: 20px;
+    width: 50%;
   }
   
-  .input-group {
+  .form {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
   }
   
-  .input-group label {
-    margin-bottom: 5px;
+  .form label {
+    margin-top: 10px;
+    color: #fff;
+    margin-bottom: 10px;
   }
   
-  input[type="text"],
-  input[type="number"],
-  button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
+  .form input[type="number"],input[type="text"] {
+    margin-bottom: 10px;
+    padding: 5px;
     border-radius: 5px;
-    font-size: 16px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
   }
   
-  button:hover {
+  .form button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .form button:hover {
     background-color: #ddd;
   }
   
@@ -117,6 +114,7 @@
     text-align: center;
     padding: 10px 0;
     flex-shrink: 0;
+    margin: -8px;
   }
   
   .footer .social-links {

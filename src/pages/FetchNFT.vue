@@ -2,7 +2,7 @@
     <div class="container">
       <div class="content">
         <div class="input-card">
-          <h3>Fetch NFT</h3>
+          <h2>Fetch NFT</h2>
           <label for="nftIdInput">Enter NFT ID:</label>
           <input type="text" id="nftIdInput" v-model="nftId" placeholder="Enter NFT ID">
           <button @click="fetchAndDisplayNFTDetails">Fetch NFT Details</button>
@@ -21,7 +21,7 @@
       <footer class="footer">
         <p>&copy; 2024 NFT Marketplace</p>
         <div class="social-links">
-          <a href="#" @click.prevent="navigateTo('social-link-1')">About us</a>
+          <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
         </div>
       </footer>
     </div>
@@ -56,7 +56,7 @@
         if (weiAmount === undefined || weiAmount === null) {
           return 'N/A'; // Or any default value you prefer
         }
-        return window.web3.utils.fromWei(weiAmount, 'ether')/1000000000000000000;
+        return window.web3.utils.fromWei(weiAmount, 'ether');
       },
       navigateTo(route) {
         this.$emit('navigate', route);
@@ -69,7 +69,7 @@
   .container {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 113vh;
   }
   
   .content {
@@ -109,6 +109,7 @@
     text-align: center;
     padding: 10px 0;
     flex-shrink: 0;
+    margin: -8px;
   }
   
   .footer .social-links {

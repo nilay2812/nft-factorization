@@ -22,7 +22,7 @@
       <footer class="footer">
         <p>&copy; 2024 NFT Marketplace</p>
         <div class="social-links">
-          <a href="#" @click.prevent="navigateTo('social-link-1')">About us</a>
+        <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
         </div>
       </footer>
     </div>
@@ -218,14 +218,6 @@ background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%
     margin: 0;
   }
 
-  .footer .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
 
   .footer .social-links {
     display: flex;

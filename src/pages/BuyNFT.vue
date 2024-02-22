@@ -1,29 +1,25 @@
 <template>
-    <div>
-      <div class="card">
-        <h1>Buy Fractional Shares</h1>
-        <div class="input-group">
+    <div class="container">
+      <div class="big-card">
+        <h2>Buy Fractional Shares</h2>
+        <form @submit.prevent="buyNFT" class="form">
           <label for="tokenId">Token ID:</label>
           <input type="number" id="tokenId" v-model.number="tokenId" required>
-        </div>
-        <div class="input-group">
           <label for="totalShares">Total Shares:</label>
           <input type="number" id="totalShares" v-model.number="totalShares" required>
-        </div>
-        <div class="input-group">
           <label for="etherAmount">Ether Amount:</label>
           <input type="number" id="etherAmount" v-model.number="etherAmount" required>
-        </div>
         <button @click="buyShares">Buy Shares</button>
+        </form>
         <div id="message">{{ message }}</div>
       </div>
-      <footer class="footer">
+    </div>
+    <footer class="footer">
         <p>&copy; 2024 NFT Marketplace</p>
         <div class="social-links">
-          <a href="#" @click.prevent="navigateTo('social-link-1')">About us</a>
+            <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
         </div>
       </footer>
-    </div>
   </template>
   
   <script>
@@ -41,7 +37,7 @@
       async buyShares() {
         try {
           const amountInWei = window.web3.utils.toWei(this.etherAmount.toString(), 'ether');
-          const sharesInWei = window.web3.utils.toWei(this.totalShares.toString(), 'ether');
+          const sharesInWei = this.totalShares.toString();
           const result = await window.contract.methods.buyFractionalShares(this.tokenId, sharesInWei).send({ from: window.ethereum.selectedAddress, value: amountInWei });
           this.message = `Shares bought successfully: ${result.transactionHash}`;
         } catch (error) {
@@ -56,60 +52,71 @@
   </script>
   
   <style scoped>
-  .card {
-    background: rgb(180, 188, 202);
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+  }
+  
+  .big-card {
     background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 98%);
     color: #ddd;
     border-radius: 10px;
     padding: 20px;
-    margin: 20px auto; /* Center the card */
-    width: 80%;
-    max-width: 500px;
+    width: 50%;
   }
   
-  .input-group {
-    margin-bottom: 15px;
+  .form {
+    display: flex;
+    flex-direction: column;
   }
   
-  .input-group label {
-    margin-bottom: 5px;
-  }
-  
-  input[type="number"],
-  button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #ddd;
-  }
-  
-  #message {
+  .form label {
     margin-top: 10px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  
+  .form input[type="number"] {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .form button {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .form button:hover {
+    background-color: #ddd;
   }
   
   .footer {
     background: rgb(180, 188, 202);
-    background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 98%);
-    color: #ddd;
+background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 98%);
+    color: #fff;
     text-align: center;
     padding: 10px 0;
-    flex-shrink: 0;
+    margin: -8px;
   }
-  
+
+
   .footer .social-links {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
+
   .footer .social-links a {
     text-decoration: none;
     color: #fff;
@@ -119,7 +126,7 @@
     transition: background-color 0.3s ease;
     margin-left: 10px;
   }
-  
+
   .footer .social-links a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }

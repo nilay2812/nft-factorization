@@ -20,6 +20,7 @@ import TransferNFT from './pages/TransferNFT.vue';
 import Footer from './components/AppFooter.vue';
 import ApprovalNFT from './pages/ApprovalNFT.vue';
 import homepage from './pages/homepage.vue';
+import AboutUs from './pages/AboutUs.vue';
 
 export default {
   name: 'App',
@@ -33,7 +34,8 @@ export default {
     BuyNFT,
     TransferNFT,
     ApprovalNFT,
-    homepage
+    homepage,
+    AboutUs
   },
   data() {
     return {
@@ -58,6 +60,8 @@ export default {
           return 'ApprovalNFT';
         case 'homepage':
           return 'homepage';
+        case 'aboutus':
+          return 'AboutUs'
         default:
           return 'homepage'; 
       }
