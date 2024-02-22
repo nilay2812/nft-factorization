@@ -179,7 +179,7 @@ header h1 span.tr {
   
   .card {
     width: calc(25% - 20px);
-    bbackground: rgb(89,119,170);
+    background: rgb(89,119,170);
 background: linear-gradient(180deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 50%, rgba(20,103,120,1) 100%, rgba(89,119,170,1) 100%); 
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);

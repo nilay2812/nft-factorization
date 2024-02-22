@@ -84,5 +84,6 @@ export default {
 body{
   background: rgb(89,119,170);
 background: linear-gradient(90deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%, rgba(2,0,36,1) 0%);
+font-family: 'Roboto', sans-serif;
 }
 </style>
