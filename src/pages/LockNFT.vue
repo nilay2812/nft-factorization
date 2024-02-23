@@ -11,7 +11,7 @@
           
             <label for="sharesAmount">Shares Amount</label>
             <input type="number" id="sharesAmount" v-model="sharesAmount">
-          <button @click="lockNFT">Lock NFT</button>
+          <button @click.prevent="lockNFT">Lock NFT</button>
           </form>
           <div id="message" v-if="message">{{ message }}</div>
         </div>
