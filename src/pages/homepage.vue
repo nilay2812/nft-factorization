@@ -11,8 +11,9 @@
         <div class="cards-container">
           <div class="card" v-for="(card, index) in cards" :key="index">
             <a :href="card.href">
-              <img :src="card.image" alt="Card Image"></a>
-              <h3>{{ card.title }}</h3>
+              <img :src="card.image" alt="Card Image" width="500" height="250"></a>
+              <h3><span class="first-word">{{ card.title.split(' ')[0] }}</span> {{ card.title.substring(card.title.indexOf(' ') + 1) }}</h3>
+              
               <p>{{ card.description }}</p>
             
           </div>
@@ -39,32 +40,32 @@
         cards: [
           {
             title: 'Fetch NFTs',
-            description: 'Explore a wide variety of NFTs from artists around the world.',
-            image: 'https://source.unsplash.com/random/100x100?nft',
-            href: 'http://localhost:8080/#lock-nft'
+            description: 'Explore and retrieve detailed information about NFTs owned by the user, providing transparency and accessibility to digital asset holdings.',
+            image: require('../assets/fetchnft.jpg'),
+            href: 'http://localhost:8080/#fetch-nft'
           },
           {
             title: 'Create NFTs',
-            description: 'Collect your favorite NFTs and showcase them in your personal gallery.',
-            image: 'https://source.unsplash.com/random/100x100?nfts',
+            description: 'Empowers the user to seamlessly create new NFTs, offering flexibility and control over digital asset issuance.',
+            image: require('../assets/createnft.png'),
             href: 'http://localhost:8080/#create-nft'
           },
           {
             title: 'Fractionalize NFTs',
-            description: 'Buy, sell, and trade NFTs with other collectors in our marketplace.',
-            image: 'https://source.unsplash.com/random/100x100?blockchain',
+            description: 'Engage in the fractionalization process of NFTs, enabling users to purchase shares and participate in asset ownership with reduced barriers to entry.',
+            image: require('../assets/fractionnft2.png'),
             href: 'http://localhost:8080/#lock-nft'
           },
           {
             title: 'Buy NFTs',
-            description: 'Explore a wide variety of NFTs from artists around the world.',
-            image: 'https://source.unsplash.com/random/100x100?web3',
+            description: 'Seamlessly purchase shares of fractionalized NFTs, facilitating investment opportunities and asset diversification within the digital asset ecosystem.',
+            image: require('../assets/buynft1.png'),
             href: 'http://localhost:8080/#buy-nft'
           },
           {
             title: 'Transfer NFTs',
-            description: 'Explore a wide variety of NFTs from artists around the world.',
-            image: 'https://source.unsplash.com/random/100x100?web3.0',
+            description: 'Facilitate secure and authorized transfers of NFTs between users, ensuring smooth asset transactions and maintaining ownership integrity.',
+            image: require('../assets/transfernft2.png'),
             href: 'http://localhost:8080/#transfer-nft'
           }
         ]
@@ -84,6 +85,10 @@
 
   
   <style scoped>
+
+  span.first-word{
+    color: #020024;
+  }
 .home {
   margin: 0;
   padding: 0;

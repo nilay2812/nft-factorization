@@ -2,13 +2,13 @@
     <div class="container">
       <div class="content">
         <div class="input-card">
-          <h2>Fetch NFT</h2>
-          <label for="nftIdInput">Enter NFT ID:</label>
-          <input type="text" id="nftIdInput" v-model="nftId" placeholder="Enter NFT ID">
+          <h2><span>Fetch</span> NFT</h2>
+          <label for="nftIdInput">Enter NFT ID</label>
+          <input type="text" id="nftIdInput" v-model="nftId" placeholder="Enter NFT ID"><br>
           <button @click="fetchAndDisplayNFTDetails">Fetch NFT Details</button>
         </div>
         <div class="details-card">
-          <h2>NFT Details</h2>
+          <h2><span>NFT</span> Details</h2>
           <p>Token ID: {{ nftDetails.tokenID }}</p>
           <p>Token URI: {{ nftURI }}</p>
           <p>Creator: {{ nftDetails.owner }}</p>
@@ -66,6 +66,9 @@
   </script>
   
   <style scoped>
+  span {
+  color: #020024;
+}
   .container {
     display: flex;
     flex-direction: column;
@@ -88,6 +91,7 @@
     border-radius: 10px;
     padding: 20px;
     margin: 20px;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
   }
   
   .input-card input[type="text"],

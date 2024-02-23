@@ -1,15 +1,15 @@
 <template>
     <div class="container">
         <div class="big-card">
-          <h2>Lock NFT</h2>
+          <h2><span>Lock</span> NFT</h2>
           <form class="form">
-            <label for="tokenId">NFT Token ID:</label>
+            <label for="tokenId">NFT Token ID</label>
             <input type="number" id="tokenId" v-model="tokenId">
           
-            <label for="tokenURI">Token URI:</label>
+            <label for="tokenURI">Token URI</label>
             <input type="text" id="tokenURI" v-model="tokenURI">
           
-            <label for="sharesAmount">Shares Amount:</label>
+            <label for="sharesAmount">Shares Amount</label>
             <input type="number" id="sharesAmount" v-model="sharesAmount">
           <button @click="lockNFT">Lock NFT</button>
           </form>
@@ -58,6 +58,10 @@
   </script>
   
   <style scoped>
+
+span {
+  color: #020024;
+}
   .container {
     display: flex;
     justify-content: center;
@@ -71,6 +75,12 @@
     border-radius: 10px;
     padding: 20px;
     width: 50%;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
+  }
+
+  .big-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
   
   .form {

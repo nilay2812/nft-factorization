@@ -2,10 +2,10 @@
     <div class="container">
       <div class="content">
         <div class="input-card">
-        <h2>Set NFT Approval</h2>
-            <label for="operatorAddress">Operator Address:</label>
+        <h2><span>Set </span> NFT Approval</h2>
+            <label for="operatorAddress">Operator Address</label>
             <input type="text" id="operatorAddress" v-model="operatorAddress">
-            <label for="approvalStatus">Approval Status (true/false):</label>
+            <label for="approvalStatus">Approval Status (true/false)</label>
             <input type="text" id="approvalStatus" v-model="approvalStatus">
             <button @click="setApprovalForAll">Set Approval For All</button>
             <br>
@@ -13,10 +13,10 @@
         </div>
         
         <div class="details-card">
-            <h2>Check NFT Approval</h2>
-            <label for="ownerAddress">Owner Address:</label>
+            <h2><span>Check</span> NFT Approval</h2>
+            <label for="ownerAddress">Owner Address</label>
             <input type="text" id="ownerAddress" v-model="ownerAddress">
-            <label for="operatorAddress">Operator Address:</label>
+            <label for="operatorAddress">Operator Address</label>
             <input type="text" id="operatorAddressCheck" v-model="operatorAddressCheck">
             <button @click="checkApprovalForAll">Check Approval For All</button>
         <br>
@@ -74,6 +74,10 @@ export default {
 </script>
 
 <style>
+
+span {
+  color: #020024;
+}
 .container {
     display: flex;
     flex-direction: column;
@@ -101,6 +105,8 @@ export default {
     display: flex;
     flex-direction: column;
     min-width: 33%;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
+    
   }
   
   .input-card input[type="text"],
@@ -122,6 +128,10 @@ export default {
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+  }
+  .input-card:hover,.details-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
   
   .form button:hover {

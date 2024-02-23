@@ -1,13 +1,13 @@
 <template>
     <div class="container">
         <div class="big-card">
-        <h2>Transfer NFT's</h2>
+        <h2><span>Transfer</span> NFT's</h2>
         <form @submit.prevent="transferTokens" class="form">
-            <label for="senderAddress">Sender Address:</label>
+            <label for="senderAddress">Sender Address</label>
             <input type="text" id="senderAddress" v-model="senderAddress">
-            <label for="recipientAddress">Recipient Address:</label>
+            <label for="recipientAddress">Recipient Address</label>
             <input type="text" id="recipientAddress" v-model="recipientAddress">
-            <label for="amount">Token ID:</label>
+            <label for="amount">Token ID</label>
             <input type="number" id="amount" v-model.number="amount">
             <button type="submit">Transfer</button>
         </form>
@@ -49,6 +49,10 @@ export default {
 }
 </script>
 <style scoped>
+
+span {
+  color: #020024;
+}
   .container {
     display: flex;
     justify-content: center;
@@ -62,6 +66,12 @@ export default {
     border-radius: 10px;
     padding: 20px;
     width: 50%;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
+  }
+
+  .big-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
   
   .form {

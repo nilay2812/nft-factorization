@@ -1,13 +1,13 @@
 <template>
     <div class="container">
       <div class="big-card">
-        <h2>Create NFT</h2>
+        <h2><span>Create</span> NFT</h2>
         <form @submit.prevent="createNFT" class="form">
-          <label for="tokenURI">Token URI:</label><br>
+          <label for="tokenURI">Token URI</label><br>
           <input type="text" id="tokenURI" v-model="tokenURI"><br>
-          <label for="price">Price (in ETH):</label><br>
+          <label for="price">Price (in ETH)</label><br>
           <input type="text" id="price" v-model="price"><br>
-          <button type="submit">Create NFT</button>
+          <button type="submit" class="create-nft-button">Create NFT</button>
         </form>
       </div>
     </div>
@@ -47,6 +47,9 @@
   </script>
   
   <style scoped>
+  span {
+  color: #020024;
+}
   .container {
     display: flex;
     justify-content: center;
@@ -60,6 +63,12 @@
     border-radius: 10px;
     padding: 20px;
     width: 50%;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
+  }
+
+  .big-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
   
   .form {
@@ -90,7 +99,7 @@
   }
   
   .form button:hover {
-    background-color: #ddd;
+    background-color: rgb(225, 225, 236) ;
   }
   
   .footer {

@@ -1,13 +1,13 @@
 <template>
     <div class="container">
       <div class="big-card">
-        <h2>Buy Fractional Shares</h2>
+        <h2><span>Buy</span> Fractional Shares</h2>
         <form @submit.prevent="buyNFT" class="form">
-          <label for="tokenId">Token ID:</label>
+          <label for="tokenId">Token ID</label>
           <input type="number" id="tokenId" v-model.number="tokenId" required>
-          <label for="totalShares">Total Shares:</label>
+          <label for="totalShares">Total Shares</label>
           <input type="number" id="totalShares" v-model.number="totalShares" required>
-          <label for="etherAmount">Ether Amount:</label>
+          <label for="etherAmount">Ether Amount</label>
           <input type="number" id="etherAmount" v-model.number="etherAmount" required>
         <button @click="buyShares">Buy Shares</button>
         </form>
@@ -52,6 +52,9 @@
   </script>
   
   <style scoped>
+  span {
+  color: #020024;
+}
   .container {
     display: flex;
     justify-content: center;
@@ -65,6 +68,12 @@
     border-radius: 10px;
     padding: 20px;
     width: 50%;
+    box-shadow: 14px 17px 17px -8px rgb(180, 188, 202);
+  }
+
+  .big-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
   }
   
   .form {
