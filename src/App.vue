@@ -1,3 +1,8 @@
+<!--
+  https://iconscout.com/3d-illustrations - for links
+-->
+
+
 <template>
   <div id="app">
     <Header />
@@ -21,6 +26,8 @@ import Footer from './components/AppFooter.vue';
 import ApprovalNFT from './pages/ApprovalNFT.vue';
 import homepage from './pages/homepage.vue';
 import AboutUs from './pages/AboutUs.vue';
+import AppWork from './pages/AppWork.vue';
+
 
 export default {
   name: 'App',
@@ -34,12 +41,14 @@ export default {
     BuyNFT,
     TransferNFT,
     ApprovalNFT,
+    AboutUs,
+    AppWork,
     homepage,
-    AboutUs
+  
   },
   data() {
     return {
-      currentRoute: 'homepage' // Set default route
+      currentRoute: ''
     };
   },
   computed: {
@@ -47,33 +56,43 @@ export default {
       // Map route names to corresponding components
       switch (this.currentRoute) {
         case 'create-nft':
-          return 'CreateNFT';
+          return CreateNFT;
         case 'fetch-nft':
-          return 'FetchNFT';
+          return FetchNFT;
         case 'lock-nft':
-          return 'LockNFT';
+          return LockNFT;
         case 'buy-nft':
-          return 'BuyNFT';
+          return BuyNFT;
         case 'transfer-nft':
-          return 'TransferNFT';
+          return TransferNFT;
         case 'approve-nft':
-          return 'ApprovalNFT';
+          return ApprovalNFT;
+        case 'about-us':
+          return AboutUs;
+          case 'app-work':
+          return AppWork;
         case 'homepage':
-          return 'homepage';
-        case 'aboutus':
-          return 'AboutUs'
+          return homepage;
         default:
-          return 'homepage'; 
+          return homepage; 
       }
     }
   },
   methods: {
+    
     navigateTo(route) {
+      console.log('Navigating to:', route); // Debugging
+      if (route === 'about-us') {
+        console.log('About Us route triggered.'); // Debugging
+      }
       this.currentRoute = route;
       window.location.hash = `#${route}`; // Update URL hash
     }
   },
   mounted() {
+    // Initialize currentRoute based on the hash or set it to the homepage
+    this.currentRoute = window.location.hash.replace('#', '') || 'homepage';
+
     // Listen for hash changes and update currentRoute
     window.addEventListener('hashchange', () => {
       this.currentRoute = window.location.hash.replace('#', ''); // Remove '#' from hash

@@ -5,10 +5,16 @@ import { contractABI, contractAddress } from './contract.js';
 
 // Define function to load Web3
 async function loadWeb3() {
-    if (window.ethereum) {
-        window.web3 = new Web3(window.ethereum);
-        await window.ethereum.enable(); // Use 'await' to enable Ethereum provider
-    } 
+    try {
+        if (window.ethereum) {
+            window.web3 = new Web3(window.ethereum);
+            await window.ethereum.enable(); // Use 'await' to enable Ethereum provider
+        } else {
+            console.log("No wallet detected");
+        }
+    } catch (error) {
+        console.error("Error loading Web3:", error);
+    }
 }
 
 // Define function to load the contract
@@ -19,6 +25,7 @@ async function loadContract() {
 
 // Define function to load Web3 and contract
 async function load() {
+    await loadWeb3(); // Call connect function to connect to wallet
     window.contract = await loadContract();
 }
 
@@ -28,4 +35,4 @@ export default {
     loadWeb3,
     loadContract,
     load
-  };
+};

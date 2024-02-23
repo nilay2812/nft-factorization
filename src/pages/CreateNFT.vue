@@ -12,9 +12,10 @@
       </div>
     </div>
     <footer class="footer">
-      <p>&copy; 2024 NFT Marketplace</p>
+      <p>&copy; 2024 NFTverse</p>
       <div class="social-links">
-        <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
+        <a href="#about-us" @click="navigateTo('about-us')">About Us</a>
+        <a href="#app-work" @click="navigateTo('app-work')">How does it work?</a>
       </div>
     </footer>
   </template>

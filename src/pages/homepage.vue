@@ -21,9 +21,10 @@
       </header>
   
       <footer class="footer">
-        <p>&copy; 2024 NFT Marketplace</p>
+        <p>&copy; 2024 NFTverse</p>
         <div class="social-links">
-        <router-link to="/#aboutus" @click="navigateTo('aboutus')">About Us</router-link>
+          <a href="#about-us" @click="navigateTo('about-us')">About Us</a>
+          <a href="#app-work" @click="navigateTo('app-work')">How does it work?</a>
         </div>
       </footer>
     </div>
@@ -171,6 +172,17 @@ header h1 span.tr {
   75%, 91.67% { opacity: 1; }
 }
 
+.connect-wallet-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #79a0e9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
   
   .cards-container {
