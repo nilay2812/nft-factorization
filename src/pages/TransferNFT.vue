@@ -8,7 +8,7 @@
             <label for="recipientAddress">Recipient Address</label>
             <input type="text" id="recipientAddress" v-model="recipientAddress">
             <label for="amount">Token ID</label>
-            <input type="number" id="amount" v-model.number="amount">
+            <input type="text" id="amount" v-model.number="amount">
             <button type="submit">Transfer</button>
         </form>
         <div id="message">{{ message }}</div>

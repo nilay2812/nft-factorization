@@ -27,6 +27,7 @@ import ApprovalNFT from './pages/ApprovalNFT.vue';
 import homepage from './pages/homepage.vue';
 import AboutUs from './pages/AboutUs.vue';
 import AppWork from './pages/AppWork.vue';
+import Marketplace from './pages/Marketplace.vue'; 
 
 
 export default {
@@ -44,7 +45,7 @@ export default {
     AboutUs,
     AppWork,
     homepage,
-  
+    Marketplace,
   },
   data() {
     return {
@@ -73,6 +74,8 @@ export default {
           return AppWork;
         case 'homepage':
           return homepage;
+        case 'marketplace':
+          return Marketplace;
         default:
           return homepage; 
       }

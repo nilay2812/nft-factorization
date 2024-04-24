@@ -39,17 +39,23 @@
     data() {
       return {
         cards: [
+        {
+            title: 'Market place',
+            description: 'Allows the user to seamlessly explore and buy trending NFTs.',
+            image: require('../assets/marketplace.png'),
+            href: 'http://localhost:8080/#marketplace'
+          },
+        {
+            title: 'Create NFTs',
+            description: 'Empowers the user to seamlessly create new NFTs, offering flexibility and control over digital asset issuance.',
+            image: require('../assets/createnft.png'),
+            href: 'http://localhost:8080/#create-nft'
+          },
           {
             title: 'Fetch NFTs',
             description: 'Explore and retrieve detailed information about NFTs owned by the user, providing transparency and accessibility to digital asset holdings.',
             image: require('../assets/fetchnft.jpg'),
             href: 'http://localhost:8080/#fetch-nft'
-          },
-          {
-            title: 'Create NFTs',
-            description: 'Empowers the user to seamlessly create new NFTs, offering flexibility and control over digital asset issuance.',
-            image: require('../assets/createnft.png'),
-            href: 'http://localhost:8080/#create-nft'
           },
           {
             title: 'Fractionalize NFTs',

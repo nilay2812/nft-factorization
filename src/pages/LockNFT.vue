@@ -4,13 +4,13 @@
           <h2><span>Lock</span> NFT</h2>
           <form class="form">
             <label for="tokenId">NFT Token ID</label>
-            <input type="number" id="tokenId" v-model="tokenId">
+            <input type="text" id="tokenId" v-model="tokenId">
           
             <label for="tokenURI">Token URI</label>
             <input type="text" id="tokenURI" v-model="tokenURI">
           
-            <label for="sharesAmount">Shares Amount</label>
-            <input type="number" id="sharesAmount" v-model="sharesAmount">
+            <label for="sharesAmount">No. of Shares</label>
+            <input type="text" id="sharesAmount" v-model="sharesAmount">
           <button @click.prevent="lockNFT">Lock NFT</button>
           </form>
           <div id="message" v-if="message">{{ message }}</div>

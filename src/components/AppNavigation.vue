@@ -2,6 +2,7 @@
     <nav class="navbar navbar-right" :class="{ 'navbar-hidden': isNavbarHidden }">
       <ul class="nav-links" :class="{ 'open': isMenuOpen }">
         <li><router-link to="/#homepage" @click="navigateTo('homepage')">Home</router-link></li>
+        <li><router-link to="/#marketplace" @click="navigateTo('marketplace')">Marketplace</router-link></li>
         <li><router-link to="/#create-nft" @click="navigateTo('create-nft')">Create</router-link></li>
         <li><router-link to="/#fetch-nft" @click="navigateTo('fetch-nft')">Fetch</router-link></li>
         <li><router-link to="/#lock-nft" @click="navigateTo('lock-nft')">Lock</router-link></li>
@@ -60,7 +61,7 @@ background: linear-gradient(360deg, rgba(89,119,170,1) 0%, rgba(20,103,120,1) 0%
     position: fixed;
     top: 0;
     right: 0;
-    width: 40%; /* Reduce the width to 50% */
+    width: 49%; /* Reduce the width to 50% */
     z-index: 100;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 20px 20px; /* Round the bottom edges */

@@ -12,6 +12,7 @@ import TransferNFT from '../pages/TransferNFT.vue';
 import Header from '../components/AppHeader.vue';
 import Footer from '../components/AppFooter.vue'
 import Navigation from '../components/AppNavigation.vue';
+import Marketplace from '@/pages/Marketplace.vue';
 
 // Create a new router instance
 const router = createRouter({
@@ -23,6 +24,7 @@ const router = createRouter({
     { path: '/lock-nft', components: { header: Header, default: LockNFT, footer: Footer } },
     { path: '/buy-nft', components: { header: Header, default: BuyNFT, footer: Footer } },
     { path: '/transfer-nft', components: { header: Header, default: TransferNFT, footer: Footer } },
+    { path: '/marketplace', components: { header: Header, default: Marketplace, footer: Footer } },
   ]
 });
 

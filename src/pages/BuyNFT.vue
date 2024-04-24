@@ -4,11 +4,11 @@
         <h2><span>Buy</span> Fractional Shares</h2>
         <form @submit.prevent="buyNFT" class="form">
           <label for="tokenId">Token ID</label>
-          <input type="number" id="tokenId" v-model.number="tokenId" required>
+          <input type="text" id="tokenId" v-model.number="tokenId" required>
           <label for="totalShares">Total Shares</label>
-          <input type="number" id="totalShares" v-model.number="totalShares" required>
+          <input type="text" id="totalShares" v-model.number="totalShares" required>
           <label for="etherAmount">Ether Amount</label>
-          <input type="number" id="etherAmount" v-model.number="etherAmount" required>
+          <input type="text" id="etherAmount" v-model.number="etherAmount" required>
         <button @click="buyShares">Buy Shares</button>
         </form>
         <div id="message">{{ message }}</div>
@@ -88,7 +88,7 @@
     margin-bottom: 10px;
   }
   
-  .form input[type="number"] {
+  .form input[type="text"] {
     margin-bottom: 10px;
     padding: 5px;
     border-radius: 5px;
